@@ -4,6 +4,8 @@ import { RootStateType } from "../redux/reducers/root.reducers";
 import { get_data_request } from "../redux/actions/data.actions";
 /* Components */
 import { Loader, Message } from "../components";
+import MUIDataTable from "mui-datatables";
+import { columns, listOptions } from "../core/mui-datatable";
 
 function Home() {
   const dispatch = useDispatch();
@@ -11,8 +13,6 @@ function Home() {
   const { loading, persons, error } = useSelector(
     (state: RootStateType) => state.data
   );
-
-  console.log("Persons", persons);
 
   useEffect(() => {
     dispatch(get_data_request());
@@ -26,7 +26,14 @@ function Home() {
         <Message severity="error">{error}</Message>
       ) : (
         <React.Fragment>
-          <div className="text-center">All is ok for now</div>
+          <div className="text-center">
+            <MUIDataTable
+              title={`Listado de Personas (${persons.length})`}
+              data={persons}
+              columns={columns}
+              options={listOptions}
+            />
+          </div>
         </React.Fragment>
       )}
     </React.Fragment>
