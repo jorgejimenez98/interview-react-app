@@ -4,33 +4,33 @@ import { DataActions, InitialDataState } from "../../types/data.types";
 const initialState: InitialDataState = {
   loading: false,
   persons: [],
-  error: null
+  error: null,
 };
 
-export default (state = initialState, action: DataActions) => {
+export const dataReducer = (state = initialState, action: DataActions) => {
   switch (action.type) {
     case DataActionTypes.REQUEST:
       return {
         ...state,
-        pending: true
+        pending: true,
       };
     case DataActionTypes.SUCCESS:
       return {
         ...state,
         pending: false,
         posts: action.payload.persons,
-        error: null
+        error: null,
       };
     case DataActionTypes.ERROR:
       return {
         ...state,
         pending: false,
         posts: [],
-        error: action.payload.error
+        error: action.payload.error,
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 };
