@@ -26,12 +26,14 @@ function Home() {
         <Message severity="error">{error}</Message>
       ) : (
         <React.Fragment>
-          <MUIDataTable
-            title={`Listado de Personas (${persons.length})`}
-            data={persons}
-            columns={columns}
-            options={listOptions}
-          />
+          <div className="mt-4 mb-4">
+            <MUIDataTable
+              title={`General List Items (${persons.length})`}
+              data={persons}
+              columns={columns}
+              options={listOptions}
+            />
+          </div>
         </React.Fragment>
       )}
     </React.Fragment>
