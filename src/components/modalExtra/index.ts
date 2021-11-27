@@ -1,5 +1,3 @@
-import { DialogContent } from "./DialogContent";
-import { DialogTitle } from "./DialogTitle";
-import { DialogActions } from "./DialogActions";
+import { BootstrapDialogTitle, BootstrapDialog } from "./DialogTitle";
 
-export { DialogContent, DialogTitle, DialogActions };
+export { BootstrapDialogTitle, BootstrapDialog };
