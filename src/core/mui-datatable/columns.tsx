@@ -20,7 +20,8 @@ export const columns: MUIDataTableColumn[] = [
       sort: false,
       customBodyRender: (value: any, tableMeta: any) => {
         const id = tableMeta.rowData[0];
-        return <ThumbnailColumn src={value} id={id} />;
+        const name = tableMeta.rowData[2];
+        return <ThumbnailColumn src={value} id={id} name={name} />;
       },
     },
   },
