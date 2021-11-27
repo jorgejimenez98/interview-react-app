@@ -30,11 +30,53 @@ export const columns: MUIDataTableColumn[] = [
     options: {
       filter: true,
       sort: true,
+      customFilterListOptions: { render: (v) => `Name: ${v}` },
       customBodyRender: (value: string) => {
         return (
-          <h5>
+          <h6>
             <strong>{value}</strong>
-          </h5>
+          </h6>
+        );
+      },
+    },
+  },
+  {
+    name: "age",
+    label: "Age",
+    options: {
+      filter: true,
+      sort: true,
+      customFilterListOptions: { render: (v) => `Age: ${v}` },
+    },
+  },
+  {
+    name: "weight",
+    label: "Weight",
+    options: {
+      filter: true,
+      sort: true,
+      customFilterListOptions: { render: (v) => `Weight: ${v}` },
+      customBodyRender: (value: number) => {
+        return (
+          <h6>
+            <strong>{value.toFixed(2)}</strong>
+          </h6>
+        );
+      },
+    },
+  },
+  {
+    name: "height",
+    label: "Height",
+    options: {
+      filter: true,
+      sort: true,
+      customFilterListOptions: { render: (v) => `Height: ${v}` },
+      customBodyRender: (value: number) => {
+        return (
+          <h6>
+            <strong>{value.toFixed(2)}</strong>
+          </h6>
         );
       },
     },
