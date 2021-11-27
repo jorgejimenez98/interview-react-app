@@ -1,4 +1,4 @@
-import { ThumbnailColumn } from "../ColumnComponents";
+import { ThumbnailColumn, HairColumnColumn } from "../ColumnComponents";
 import { MUIDataTableColumn } from "mui-datatables";
 
 export const columns: MUIDataTableColumn[] = [
@@ -78,6 +78,19 @@ export const columns: MUIDataTableColumn[] = [
             <strong>{value.toFixed(2)}</strong>
           </h6>
         );
+      },
+    },
+  },
+  {
+    name: "hair_color",
+    label: "Hair Color",
+    options: {
+      filter: true,
+      sort: true,
+      filterType: "multiselect",
+      customFilterListOptions: { render: (v) => `Hair Color: ${v}` },
+      customBodyRender: (value: string) => {
+        return <HairColumnColumn text={value} />;
       },
     },
   },
