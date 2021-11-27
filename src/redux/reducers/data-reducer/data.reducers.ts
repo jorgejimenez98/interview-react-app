@@ -12,20 +12,20 @@ export const dataReducer = (state = initialState, action: DataActions) => {
     case DataActionTypes.REQUEST:
       return {
         ...state,
-        pending: true,
+        loading: true,
       };
     case DataActionTypes.SUCCESS:
       return {
         ...state,
-        pending: false,
-        posts: action.payload.persons,
+        loading: false,
+        persons: action.payload.persons,
         error: null,
       };
     case DataActionTypes.ERROR:
       return {
         ...state,
-        pending: false,
-        posts: [],
+        loading: false,
+        persons: [],
         error: action.payload.error,
       };
     default:
