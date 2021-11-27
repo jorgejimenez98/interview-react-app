@@ -1,4 +1,6 @@
-export const listOptions = {
+import { MUIDataTableOptions } from "mui-datatables";
+
+export const listOptions: MUIDataTableOptions = {
   filterType: "textField",
   responsive: "vertical",
   rowsPerPage: 5,
@@ -10,11 +12,3 @@ export const listOptions = {
   viewColumns: true,
   filter: true,
 };
-
-/* 
- customBodyRender: (value, tableMeta) => {
-        const email = tableMeta.rowData[3];
-        return <a href={`mailto:${email}`}>{email}</a>;
-      },
-    },
-*/
