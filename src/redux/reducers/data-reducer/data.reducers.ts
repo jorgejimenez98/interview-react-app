@@ -1,5 +1,5 @@
-import { DataActionTypes } from "../actionTypes/data_action.types";
-import { DataActions, InitialDataState } from "../types/data.types";
+import { DataActionTypes } from "../../actionTypes/data_action.types";
+import { DataActions, InitialDataState } from "../../types/data.types";
 
 const initialState: InitialDataState = {
   loading: false,
