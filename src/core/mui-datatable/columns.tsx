@@ -47,6 +47,13 @@ export const columns: MUIDataTableColumn[] = [
       filter: true,
       sort: true,
       customFilterListOptions: { render: (v) => `Age: ${v}` },
+      customBodyRender: (value: number) => {
+        return (
+          <h6>
+            <strong>{value}</strong>
+          </h6>
+        );
+      },
     },
   },
   {
