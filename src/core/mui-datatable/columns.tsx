@@ -1,5 +1,10 @@
-import { ThumbnailColumn, HairColumnColumn } from "../ColumnComponents";
+import {
+  ThumbnailColumn,
+  HairColumnColumn,
+  ActionsColumn,
+} from "../ColumnComponents";
 import { MUIDataTableColumn } from "mui-datatables";
+import { Person } from "../../models/person";
 
 export const columns: MUIDataTableColumn[] = [
   {
@@ -100,6 +105,40 @@ export const columns: MUIDataTableColumn[] = [
       customBodyRender: (value: string) => {
         return <HairColumnColumn text={value} />;
       },
+    },
+  },
+  {
+    name: "professions",
+    label: "Actions",
+    options: {
+      filter: true,
+      sort: true,
+      filterType: "multiselect",
+      customFilterListOptions: { render: (v) => `Hair Color: ${v}` },
+      customBodyRender: (professions: string[], tableMeta: any) => {
+        const newPerson: Person = {
+          id: tableMeta.rowData[0],
+          thumbnail: tableMeta.rowData[1],
+          name: tableMeta.rowData[2],
+          age: tableMeta.rowData[3],
+          weight: tableMeta.rowData[4],
+          height: tableMeta.rowData[5],
+          hair_color: tableMeta.rowData[6],
+          professions: professions,
+          friends: tableMeta.rowData[8],
+        };
+        return <ActionsColumn item={newPerson} />;
+      },
+    },
+  },
+  {
+    name: "friends",
+    label: "",
+    options: {
+      filter: false,
+      sort: false,
+      display: false,
+      viewColumns: false,
     },
   },
 ];
