@@ -1,21 +1,40 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import { DetailsItemText } from "./detailsComponents";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  Box,
+  Grid,
+} from "@mui/material";
 
 export default function DetailsModal({ handleClose, open, item }) {
   return (
     <React.Fragment>
       <Dialog fullWidth maxWidth={"md"} open={open} onClose={handleClose}>
-        <DialogTitle>{item.name}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            You can set my maximum width and whether to adapt or not.
-          </DialogContentText>
-          Content Goes Here
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={7}>
+                <img
+                  src={item.thumbnail}
+                  alt={item.thumbnail}
+                  className="img-fluid img-thumbnail rounded w-100"
+                  style={{ height: "300px" }}
+                />
+              </Grid>
+              <Grid item xs={5}>
+                <DetailsItemText item={item}/>
+              </Grid>
+              <Grid item xs={4} className="bg-aqua">
+                OK
+              </Grid>
+              <Grid item xs={8}>
+                OK
+              </Grid>
+            </Grid>
+          </Box>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>
