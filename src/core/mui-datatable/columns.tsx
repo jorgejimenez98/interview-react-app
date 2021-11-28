@@ -111,10 +111,9 @@ export const columns: MUIDataTableColumn[] = [
     name: "professions",
     label: "Actions",
     options: {
-      filter: true,
-      sort: true,
-      filterType: "multiselect",
-      customFilterListOptions: { render: (v) => `Hair Color: ${v}` },
+      filter: false,
+      sort: false,
+      viewColumns: false,
       customBodyRender: (professions: string[], tableMeta: any) => {
         const newPerson: Person = {
           id: tableMeta.rowData[0],
