@@ -1,5 +1,5 @@
 import React from "react";
-import { FormGroup, FormLabel, TextField } from "@mui/material";
+import { FormGroup, FormLabel, TextField } from "@material-ui/core";
 
 function DisplayFilterNumbers({ type, filterList, onChange, index, column }) {
   return (

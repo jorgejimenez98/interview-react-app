@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import { Visibility } from "@mui/icons-material";
+import { IconButton, Tooltip } from "@material-ui/core";
+import { Visibility } from "@material-ui/icons";
 import { DetailsModal } from "../../components";
 
 export default function ActionsColumn({ item }) {

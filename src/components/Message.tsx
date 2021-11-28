@@ -1,5 +1,5 @@
 import React from "react";
-import Alert from '@mui/material/Alert';
+import Alert from '@material-ui/lab/Alert';
 
 export default function Message({ severity, children }) {
   return (

@@ -4,7 +4,7 @@ import { RootStateType } from "../redux/reducers/root.reducers";
 import { get_data_request } from "../redux/actions/data.actions";
 /* Components */
 import { Loader, Message } from "../components";
-import MUIDataTable from "mui-datatables";
+import MUIDataTable from 'mui-datatables'
 import { columns, listOptions } from "../core/mui-datatable";
 
 function Home() {
