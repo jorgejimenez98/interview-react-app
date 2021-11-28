@@ -58,6 +58,13 @@ export const columns: MUIDataTableColumn[] = [
       sort: true,
       download: true,
       filterType: "custom",
+      customBodyRender: (value: number) => {
+        return (
+          <h6>
+            <strong>{value}</strong>
+          </h6>
+        );
+      },
 
       customFilterListOptions: {
         render: (v) => {
@@ -115,13 +122,62 @@ export const columns: MUIDataTableColumn[] = [
       filter: true,
       sort: true,
       download: true,
-      customFilterListOptions: { render: (v) => `Weight: ${v}` },
+      filterType: "custom",
+
       customBodyRender: (value: number) => {
         return (
           <h6>
             <strong>{value.toFixed(2)}</strong>
           </h6>
         );
+      },
+
+      customFilterListOptions: {
+        render: (v) => {
+          if (v[0] && v[1]) {
+            return [`Min weight: ${v[0]}`, `Max weight: ${v[1]}`];
+          } else if (v[0]) {
+            return `Min weight: ${v[0]}`;
+          } else if (v[1]) {
+            return `Max weight: ${v[1]}`;
+          }
+          return [];
+        },
+        update: (filterList, filterPos, index) => {
+          if (filterPos === 0) {
+            filterList[index].splice(filterPos, 1, "");
+          } else if (filterPos === 1) {
+            filterList[index].splice(filterPos, 1);
+          } else if (filterPos === -1) {
+            filterList[index] = [];
+          }
+
+          return filterList;
+        },
+      },
+      filterOptions: {
+        names: [],
+        logic(weight, filters) {
+          if (filters[0] && filters[1]) {
+            return weight < filters[0] || weight > filters[1];
+          } else if (filters[0]) {
+            return weight < filters[0];
+          } else if (filters[1]) {
+            return weight > filters[1];
+          }
+          return false;
+        },
+        display: (filterList, onChange, index, column) => {
+          return (
+            <DisplayFilterNumbers
+              type={"Weight"}
+              filterList={filterList}
+              onChange={onChange}
+              index={index}
+              column={column}
+            />
+          );
+        },
       },
     },
   },
@@ -132,13 +188,63 @@ export const columns: MUIDataTableColumn[] = [
       filter: true,
       sort: true,
       download: true,
-      customFilterListOptions: { render: (v) => `Height: ${v}` },
+      filterType: "custom",
+
       customBodyRender: (value: number) => {
         return (
           <h6>
             <strong>{value.toFixed(2)}</strong>
           </h6>
         );
+      },
+
+      customFilterListOptions: {
+        render: (v) => {
+          if (v[0] && v[1]) {
+            return [`Min Height: ${v[0]}`, `Max Height: ${v[1]}`];
+          } else if (v[0]) {
+            return `Min Height: ${v[0]}`;
+          } else if (v[1]) {
+            return `Max Height: ${v[1]}`;
+          }
+          return [];
+        },
+        update: (filterList, filterPos, index) => {
+          if (filterPos === 0) {
+            filterList[index].splice(filterPos, 1, "");
+          } else if (filterPos === 1) {
+            filterList[index].splice(filterPos, 1);
+          } else if (filterPos === -1) {
+            filterList[index] = [];
+          }
+
+          return filterList;
+        },
+      },
+
+      filterOptions: {
+        names: [],
+        logic(height, filters) {
+          if (filters[0] && filters[1]) {
+            return height < filters[0] || height > filters[1];
+          } else if (filters[0]) {
+            return height < filters[0];
+          } else if (filters[1]) {
+            return height > filters[1];
+          }
+          return false;
+        },
+        display: (filterList, onChange, index, column) => {
+          return (
+            <DisplayFilterNumbers
+              type={"Height"}
+              filterList={filterList}
+              onChange={onChange}
+              index={index}
+              column={column}
+            />
+          );
+        },
       },
     },
   },
