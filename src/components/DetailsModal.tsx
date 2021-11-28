@@ -1,5 +1,7 @@
 import * as React from "react";
-import { DetailsItemText } from "./detailsComponents";
+import { DetailsItemText, DetailsItemLists } from "./detailsComponents";
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
 import {
   Button,
   Dialog,
@@ -9,10 +11,25 @@ import {
   Grid,
 } from "@mui/material";
 
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 export default function DetailsModal({ handleClose, open, item }) {
   return (
     <React.Fragment>
-      <Dialog fullWidth maxWidth={"md"} open={open} onClose={handleClose}>
+      <Dialog
+        fullWidth
+        maxWidth={"md"}
+        TransitionComponent={Transition}
+        open={open}
+        onClose={handleClose}
+      >
         <DialogContent>
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
@@ -25,13 +42,17 @@ export default function DetailsModal({ handleClose, open, item }) {
                 />
               </Grid>
               <Grid item xs={5}>
-                <DetailsItemText item={item}/>
+                <DetailsItemText item={item} />
               </Grid>
-              <Grid item xs={4} className="bg-aqua">
-                OK
+
+              <Grid item xs={6}>
+                <DetailsItemLists
+                  list={item.professions}
+                  title={"Professions"}
+                />
               </Grid>
-              <Grid item xs={8}>
-                OK
+              <Grid item xs={6}>
+                <DetailsItemLists list={item.friends} title={"Friends"} />
               </Grid>
             </Grid>
           </Box>
