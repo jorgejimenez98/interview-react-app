@@ -1,3 +1,3 @@
-import { BootstrapDialogTitle, BootstrapDialog } from "./DialogTitle";
+import { DialogTitle, DialogContent, DialogActions } from "./dialog.properties";
 
-export { BootstrapDialogTitle, BootstrapDialog };
+export { DialogTitle, DialogContent, DialogActions };
