@@ -1,19 +1,17 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
-import { BootstrapDialogTitle, BootstrapDialog } from "./modalExtra";
+import { Button, Dialog } from "@material-ui/core";
+import { DialogTitle, DialogContent, DialogActions } from "./modalExtra";
 
 export default function ImageModal({ open, handleClose, image }) {
   return (
-    <BootstrapDialog
+    <Dialog
       onClose={handleClose}
       aria-labelledby="customized-dialog-title"
       open={open}
     >
-      <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+      <DialogTitle id="customized-dialog-title" onClose={handleClose}>
         {image.name}
-      </BootstrapDialogTitle>
+      </DialogTitle>
       <DialogContent dividers>
         <img
           src={image.src}
@@ -23,10 +21,10 @@ export default function ImageModal({ open, handleClose, image }) {
         />
       </DialogContent>
       <DialogActions>
-        <Button autoFocus onClick={handleClose}>
+        <Button autoFocus onClick={handleClose} color="primary">
           Close
         </Button>
       </DialogActions>
-    </BootstrapDialog>
+    </Dialog>
   );
 }
