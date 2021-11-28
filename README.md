@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# Interview Frontend Test Jorge Jimenez
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a react application that shows a table of elements brought from an API
 
-## Available Scripts
+## Install and run project 
 
-In the project directory, you can run:
+Clone repository:
 
-### `yarn start`
+```sh
+$ git clone https://github.com/jorgejimenez98/interview-react-app.git
+$ cd interview-react-app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+Install dependencies using the next code:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+$ $ npm install --save
+```
 
-### `yarn test`
+Run project:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+$ npm start
+```
+The Api URL used was `https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json`  
+The project will be running on url `http://127.0.0.1:3000`
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Windows of our app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Main Window
 
-### `yarn eject`
+![Alt text](src/assets/main.png?raw=true "Ejemplo")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Click on the photo and you can see it bigger
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Alt text](src/assets/picture.png?raw=true "Ejemplo")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### By pressing the magnifying glass you can filter the table based on any of the attributes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Alt text](src/assets/litteFilter.png?raw=true "Ejemplo")
 
-## Learn More
+### When pressing the download button, the app proceeds to download a csv file with all the data from the table
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Alt text](src/assets/download.png?raw=true "Ejemplo")
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### You can also choose which columns of the table you want to see
+![Alt text](src/assets/showColumns.png?raw=true "Ejemplo")
+
+### The application also has a more precise filter in case the user wants to filter by any given field
+![Alt text](src/assets/pickColor.png?raw=true "Ejemplo")
+
+### By pressing the EYE button of the desired column the user will be able to see the details of the item
+![Alt text](src/assets/allDetails.png?raw=true "Ejemplo")
+
