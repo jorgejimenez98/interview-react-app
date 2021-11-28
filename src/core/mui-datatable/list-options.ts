@@ -11,4 +11,11 @@ export const listOptions: MUIDataTableOptions = {
   print: false,
   viewColumns: true,
   filter: true,
+  downloadOptions: {
+    filename: `Items List`,
+    filterOptions: {
+      useDisplayedColumnsOnly: true,
+      useDisplayedRowsOnly: true,
+    },
+  },
 };
