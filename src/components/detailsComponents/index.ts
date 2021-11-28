@@ -1,3 +1,4 @@
 import DetailsItemText from "./DetailsItemText";
+import DetailsItemLists from "./DetailsItemLists";
 
-export { DetailsItemText };
+export { DetailsItemText, DetailsItemLists };
