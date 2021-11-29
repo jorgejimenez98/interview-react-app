@@ -51,6 +51,6 @@ The project will be running on url `http://127.0.0.1:3000`
 ### The application also has a more precise filter in case the user wants to filter by any given field
 ![Alt text](src/assets/pickColor.png?raw=true "Ejemplo")
 
-### By pressing the EYE button of the desired column the user will be able to see the details of the item
-![Alt text](src/assets/allDetails.png?raw=true "Ejemplo")
+### By pressing the EYE button of the desired column the user will be able to see the details of the item on a full screen modal
+![Alt text](src/assets/fullScreen.png?raw=true "Ejemplo")
 
