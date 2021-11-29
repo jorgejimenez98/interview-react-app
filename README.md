@@ -22,8 +22,10 @@ Run project:
 ```sh
 $ npm start
 ```
-  
+The Api URL used was `https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json`  
 The project will be running on url `http://127.0.0.1:3000`
+
+
 
 # Windows of our app
 
